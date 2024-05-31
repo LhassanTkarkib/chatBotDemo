@@ -23,12 +23,9 @@ public class LlamaAiServiceImpl implements LlamaAiService {
             "  balance double precision," +
             "  CONSTRAINT account_entity_pkey PRIMARY KEY (id)" +
             ");" +
-            "Generate only SELECT SQL query based on this table structure according to the given requests:" +
-            "If the request is not a SELECT query respond with \"there's no such data.\"" +
-            "If the request has no relation to the table respond with \"there's no such data.\"" +
-            "only show the SELECT queries with no explanation or decoration only the query.";
+            "Please generate a SELECT SQL query based on this table structure according to the given requests. If a request has no relation to the table, respond with \"there's no such data.\" If the request has a relation, only provide the SQL query without any explanation or decoration. If the request is not \"SELECT,\" respond with \"there's no such data.\"";
 
-    public String QueryRequest = " so give only the select query for this text :";
+    public String QueryRequest = "so give only the select query for this text :";
 
 
     public LlamaAiServiceImpl(ChatClient chatClient) {
